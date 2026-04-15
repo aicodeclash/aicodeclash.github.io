@@ -1,0 +1,49 @@
+<div class="waitlist" id="waitlist">
+  <div class="waitlist-top">
+    <div>
+      <h2 class="waitlist-title">Join the waitlist</h2>
+      <p class="waitlist-note">No spam. Just product access and launch updates.</p>
+    </div>
+    <p class="waitlist-note"><strong style="color:var(--accent)">287 creators</strong> already joined</p>
+  </div>
+
+  <form id="wishForm">
+    <div class="form-grid">
+      <div class="field">
+        <label for="gmail">Gmail address</label>
+        <input id="gmail" name="gmail" type="email" placeholder="you@gmail.com" required />
+      </div>
+
+      <div class="field">
+        <label for="wouldPay">Would pay</label>
+        <select id="wouldPay" name="wouldPay" required>
+          <option value="" selected disabled>Select a range</option>
+          <option value="$5 – $10">$5 – $10</option>
+          <option value="$10 – $20">$10 – $20</option>
+          <option value="More than $20">More than $20</option>
+        </select>
+      </div>
+
+      <div class="field full">
+        <label for="usage">What would you use this for?</label>
+        <select id="usage" name="usage" required>
+          <option value="" selected disabled>Select an option</option>
+          <option value="YouTube Shorts">YouTube Shorts</option>
+          <option value="TikTok content">TikTok content</option>
+          <option value="Instagram Reels">Instagram Reels</option>
+          <option value="Facebook Reels">Facebook Reels</option>
+          <option value="Educational content">Educational content</option>
+          <option value="Finance / data content">Finance / data content</option>
+          <option value="All of the above">All of the above</option>
+          <option value="Just want to try it">Just want to try it</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="submit-row">
+      <button class="submit-btn" id="submitBtn" type="submit">Join the waitlist →</button>
+    
+    </div>
+        <div class="status" id="formStatus"></div>
+  </form>
+</div>

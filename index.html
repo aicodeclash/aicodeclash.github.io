@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Clash Studio — AI Coding Battle</title>
+  <meta name="description" content="Type a prompt. Watch Claude, ChatGPT, Gemini, and DeepSeek battle it out. Join the waitlist." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <main>
+    <div id="hero-container"></div>
+    <div id="battle-container"></div>
+    <div id="wishlist-container"></div>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script>
+    async function loadComponent(elementId, filePath) {
+      try {
+        const response = await fetch(filePath);
+        if (!response.ok) throw new Error(`Could not load ${filePath}`);
+        const text = await response.text();
+        document.getElementById(elementId).innerHTML = text;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function loadAll() {
+      await Promise.all([
+        loadComponent('header-container', 'components/header.html'),
+        loadComponent('hero-container', 'components/hero.html'),
+        loadComponent('wishlist-container', 'components/wishlist.html'),
+        loadComponent('battle-container', 'components/battle.html'),
+        loadComponent('footer-container', 'components/footer.html')
+      ]);
+
+      // Load main script dynamically AFTER HTML components are successfully placed in the DOM
+      const script = document.createElement('script');
+      script.src = 'js/main.js';
+      document.body.appendChild(script);
+    }
+
+    loadAll();
+  </script>
+</body>
+</html>
